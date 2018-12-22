@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+      <title>Sticky Note</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="css/page-style.css" rel="stylesheet" type="text/css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="typescript/notesScript.js" type="text/javascript"></script>
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <body onload="new StickyNotes().renderData(0)">
+        <header>
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                    <span class="menu-lines navbar-brand" onclick="new StickyNotes().sideMenu()">&#9776;</span>
+                    <a class="navbar-brand" href="#"><b>Sticky</b> Note</a>
+                </div>
+                <form class="navbar-form navbar-left">
+                </form>
+              </div>
+            </nav>
+        </header>
+        <!-- displaying navigation bar -->
+        <div id="sidenavigation" class="sidenavigation">
+            <ul id = hiding>
+                <li>
+                    <a>
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        <span>Notes</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fa fa-archive"></i>
+                        <span onclick="new StickyNotes().ArchivePage()">Archive</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="glyphicon glyphicon-trash"></span>
+                        <span onclick="new StickyNotes().TrashPage()">Trash</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Displaying text box -->
+        <main class="row">
+
+            <div id="textbox-style" class="textbox-style col-md-7 col-md-offset-3" onclick="new StickyNotes().showTextBox()">
+                Write here...
+                <span class="textbox-style-icon-wrapper">
+                    <span><a class="glyphicon glyphicon-picture"></a></span>
+                    <span><a class="glyphicon glyphicon-pencil"></a></span>
+                </span>
+            </div>
+            <form>
+                <div id="note" class="note-style-wrapper col-md-7 col-md-offset-3">
+                    <div class="text-area-style">
+                        <img src="" class="img-responsive" id="uploaded-image"/>
+                        <input type="text" id="title" class="width-100 text-area-title" placeholder="Title" autofocus />
+                        <div class="textareaElement" id="note-content" data-text="Enter text here" role="textbox" contenteditable></div>
+                    </div>
+                    <div id="text-area-footer">
+                        <span>
+                            <label>
+                                <span id = "imagepic" class="glyphicon glyphicon-picture glyph-hover" title="add Picture"></span>
+                                <input type="file" accept="image/*" onchange="new StickyNotes().savingImage(this);" style="display:none" />
+                            </label>
+                        </span>
+                        <span style="float: right">
+                            <button type="reset" class="clear-button" onclick="new StickyNotes().clearAllInformation()">Clear</button>
+                            <a class="done-button" onclick="new StickyNotes().saveInformation()">Save</a>
+                            
+                        </span>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Displaying Notes here  -->
+            <div class="row">
+                <div class="col-md-7 col-md-offset-3">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 for-left">
+                                <div class ="dynamic-div ui-widget-content" id="old-save">
+                                </div>
+                            </div>
+                            <div class="col-md-4 for-middle">
+                                <div class ="dynamic-div ui-widget-content" id="previous-save">
+                                </div>
+                            </div>
+                            <div class="col-md-4 for-right">
+                                <div class ="dynamic-div ui-widget-content" id="latest-save">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+         <div id="myModale" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Message</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Deleted successfully.</p>
+                    </div> 
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+         <div id="myArchiveModale" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Message</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Archived successfully.</p>
+                    </div> 
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Editable Model-->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <img src="" class="img-responsive" id="uploaded-image"/>
+                        <input type="text" id="model-title" class="modal-title width-100 text-area-title" placeholder="Title" />
+                    </div>
+                    <div class="modal-body">
+                        <div class="textareaElement border-none" id="model-note-content" data-text="Enter text here" role="textbox" contenteditable ></div>
+                    </div> 
+                    <div class="modal-footer">
+                        <button type="button" value="" id="id-holder" class="btn btn-default" data-dismiss="modal" onclick="new StickyNotes().storeModelData(this.value)">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+        </footer>
+    </body>
+</html>

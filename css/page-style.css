@@ -1,0 +1,366 @@
+
+/* 
+    Created on : Aug 31, 2017, 4:14:25 PM
+    Author     : piyush.tiwari
+*/
+
+.navbar-default
+{
+     background: #C0343D;
+}
+
+.navbar-default .navbar-form 
+{
+    border-color: #C0343D;
+}
+
+.navbar-default .navbar-brand {
+    color: whitesmoke;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: white;
+}
+.navbar {
+    border: 1rem solid transparent;
+}
+
+.navbar-brand
+{
+    font-size: 3rem;
+}
+
+.menu-lines
+{
+    margin-left: 3rem;
+    margin-right: 5rem;
+    font-size: 3.5rem;
+    color: whitesmoke;
+}
+.menu-lines:hover
+{
+    cursor: pointer;
+    color: white;
+}
+.sidenavigation 
+{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 6.5rem;
+    left: 0;
+    background-color: #C0343D;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 3rem;
+}
+
+ol, ul {
+    margin-left: -34px;
+}
+.sidenavigation ul li
+{
+    color: white;
+    display: block;
+    font-size: 2rem;
+    border-bottom: 1px solid #f1b1b1;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    padding-bottom: 0.7rem;
+    box-shadow: -1px 3px 3px #350606;
+    padding: 1rem 2rem;
+}
+.sidenavigation ul li a
+{
+    text-decoration: none;
+    color: white;
+}
+.sidenavigation ul li a:hover
+{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 1rem;
+    padding-left: 0.5rem;
+}
+
+.well
+{
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 0px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+.glyph-hover:hover
+{
+    color: black;
+}
+
+.textbox-style
+{
+    margin-top: 2rem;
+    background-color: #e6e6e6;
+    padding: 1rem 2rem;
+    font-size: large;
+    color: dimgray;
+}
+.textbox-style-icon-wrapper
+{
+    float: right;
+}
+.textbox-style-icon-wrapper span
+{
+    padding: 0rem 1rem;
+    font-size: 2rem;
+}
+.textbox-style-icon-wrapper span a
+{
+    color: gray;
+}
+.textbox-style-icon-wrapper span a:hover
+{
+    color: black;
+    text-decoration: none;
+}
+
+.note-style-wrapper
+{
+    display: none;
+}
+
+#note input
+{
+    border-bottom: none;
+}
+#note input::placeholder 
+{
+  color: #cccccc;
+  font-style:normal;
+  font-stretch:expanded;
+}
+
+.text-area-style
+{
+    margin-top: 2.5rem;
+    width: 100%;
+}
+.text-area-style textarea
+{
+    border-top: none;
+}
+
+.text-area-title
+{
+    border: 1px solid #ccc;
+    height: 4.5rem;
+    font-size: 2rem;
+    padding-left: 1rem;
+    box-shadow: 0px 3px 3px lavender;
+}
+
+.width-100
+{
+    width:100%;
+}
+
+[contentEditable]:empty:not(:focus):before
+{
+    content:attr(data-text);
+    color:#cccccc;
+    font-size: medium;
+}
+
+.textareaElement 
+{
+  border: 1px solid #ccc;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-top: none;
+  font-size: large;
+  padding: 0.8rem 1rem;
+  border-bottom: none;
+}
+.forimage-upload
+{
+    position: absolute;
+    opacity: 0;
+    width: 2rem;
+    top: 0rem;
+}
+
+#text-area-footer
+{
+    background-color: white;
+    font-size: large;
+    font-size: large;
+    border: 1px solid #ccc;
+    border-top: none;
+    box-shadow: 0px 3px 3px lavender;
+    color: #544545;
+    
+}
+#text-area-footer span
+{
+    padding: 1.5rem 1rem;
+}
+
+.clear-button
+{
+ color: #080808;
+ cursor: pointer;
+ border: 1px #cccccc solid;
+ border-radius: 5px;
+ background-color: #e4dbdb;
+}
+.clear-button:hover
+{
+    background-color:#cccccc;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #080808;
+}
+
+.done-button
+{
+ color: #080808;
+ cursor: pointer;
+ border: 1px #cccccc solid;
+ padding: 0.4rem 0.5rem;
+ border-radius: 5px;
+ background-color: #e4dbdb; 
+ 
+}
+.done-button:hover
+{
+    background-color:#cccccc;
+    cursor: pointer;
+    padding: 0.4rem 0.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #080808;
+}
+
+.dynamic-div
+{
+    width: 18rem;
+}
+
+.insingle-line
+{
+    word-wrap: break-word;
+    margin-top: 2.5rem;
+    
+}
+.for-left{
+    float: left;
+}
+.for-middle
+{
+    float: left;
+}
+.for-right
+{
+    float: left;
+}
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.tiles-footer
+{
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.date-style
+{
+    text-align: right;
+    padding-bottom: 1rem;
+}
+#draggable:hover >.tiles-footer
+{
+    opacity: 1;
+}
+#child1:hover > .footer-font> .tiles-footer
+{
+    opacity: 1;
+}
+.tiles-footer span
+{
+    padding: 0rem 1rem;
+    font-size: larger;
+}
+.footer-hover
+{
+    color: #544545;
+}
+.footer-hover:hover
+{
+    color: black;
+}
+.title-font
+{
+    font-size: 3.5rem;
+    font-weight: 400;
+    font-family: fantasy;
+}
+.data-font
+{
+    font-size: 2rem;
+    font-style: normal;
+    padding: 1rem 0rem;
+}
+
+.row
+{
+    margin: 0rem;
+}
+
+@media screen and (max-width: 767px) {
+    .sidenavigation 
+    {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 10.5rem;
+    left: 0;
+    background-color: #C0343D;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 3rem;
+}
+}
+
+@media screen and (max-width: 352px) {
+    .sidenavigation 
+    {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 15.5rem;
+    left: 0;
+    background-color: #C0343D;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 3rem;
+}
+}
